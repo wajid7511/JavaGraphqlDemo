@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: graphql
+  config:
+    activate:
+      on-profile: dev
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: StudentPortal
+server:
+  port: 8081
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  data:
+    mongodb:
+      uri: mongodb://dockermongodb:27017
+      database: StudentPortal
+server:
+  port: 8000
